@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather main</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css"
+      rel="stylesheet"
+    />
+    
+  </head>
+  <body class=" bg-slate-500">
+    <header>
+      <h1 class="text-3xl font-bold underline flex justify-center">
+        Let's checkout the weather!
+      </h1>
+      <div class="flex justify-center m-1">
+        <div class="xl:w-96">
+          <div class="relative flex w-full flex-wrap items-stretch">
+            <input
+              type="search"
+              class="city relative m-0 -mr-px block w-[1%] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 bg-white"
+              input-type="text"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="button-addon3"
+            />
+            <button
+              class="search-btn relative z-[2] rounded-r border-2 border-primary px-6 py-2 text-xs font-medium uppercase text-primary text-white transition duration-150 ease-in-out bg-blue-600 hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+              type="button"
+              id="button-addon3"
+              data-te-ripple-init
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <button
+          data-modal-target="defaultModal"
+          data-modal-toggle="defaultModal"
+          class="block text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          type="button"
+        >
+          Past Searches
+        </button>
+
+        <!-- Main modal -->
+        <div
+          id="defaultModal"
+          tabindex="-1"
+          aria-hidden="true"
+          class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full"
+        >
+          <div class="relative w-full h-full max-w-2xl md:h-auto">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <!-- Modal header -->
+              <div
+                class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600"
+              >
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                  Past Searches
+                </h3>
+                <button
+                  type="button"
+                  class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  data-modal-hide="defaultModal"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+                </button>
+              </div>
+              <!-- Modal body -->
+              <div class="p-6 space-y-6">
+                <div
+                  class="past-searches-list text-base leading-relaxed text-gray-500 dark:text-gray-400"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div
+        class="currentWeather relative mb-8 box-content h-40 max-w-screen p-4 border-4 flex items-center justify-center bg-white"
+      >
+        <h2>Current weather for <span class="cityName"></span></h2>
+        <p>Temperature: <span class="temperature"></span>°F</p>
+        <p>Weather: <span class="weatherDescription"></span></p>
+        <p>Humidity: <span class="humidity"></span>%</p>
+        <p><img class="weatherIcon" src="" alt="" /></p>
+        <p
+          id="currentDay"
+          class="absolute left-0 top-0 text-xl font-semibold"
+        ></p>
+
+        <!-- todays current weather -->
+      </div>
+      <div class="grid grid-cols-5 gap-4 box-content h-40 w-25 p-4 border-4 bg-white">
+        <!-- 5 day weather -->
+        <div class="day1 border-4 border-grey-700">01</div>
+        <div class="day2 border-4 border-grey-700">02</div>
+        <div class="day3 border-4 border-grey-700">03</div>
+        <div class="day4 border-4 border-grey-700">04</div>
+        <div class="day5 border-4 border-grey-700">05</div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
