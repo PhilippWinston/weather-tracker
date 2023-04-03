@@ -24,7 +24,6 @@ $(function () {
   });
 
   const pastSearches = document.querySelector(".past-searches-list");
-
   pastSearches.addEventListener("click", (event) => {
     const clickedLink = event.target.closest("a");
     if (clickedLink) {
