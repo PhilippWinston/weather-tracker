@@ -11,9 +11,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css"
       rel="stylesheet"
     />
-    
   </head>
-  <body class=" bg-slate-500">
+  <body class="bg-slate-500">
     <header>
       <h1 class="text-3xl font-bold underline flex justify-center">
         Let's checkout the weather!
@@ -101,27 +100,76 @@
     </header>
     <main>
       <div
-        class="currentWeather relative mb-8 box-content h-40 max-w-screen p-4 border-4 flex items-center justify-center bg-white"
+        class="currentWeather relative mb-8 box-content max-w-screen border-4 flex flex-col p-4 bg-white text-xl font-semibold"
       >
+        <h2 id="currentDay" class="date">Current Date:</h2>
         <h2>Current weather for <span class="cityName"></span></h2>
         <p>Temperature: <span class="temperature"></span>°F</p>
         <p>Weather: <span class="weatherDescription"></span></p>
         <p>Humidity: <span class="humidity"></span>%</p>
         <p><img class="weatherIcon" src="" alt="" /></p>
-        <p
-          id="currentDay"
-          class="absolute left-0 top-0 text-xl font-semibold"
-        ></p>
-
-        <!-- todays current weather -->
+        
       </div>
-      <div class="grid grid-cols-5 gap-4 box-content h-40 w-25 p-4 border-4 bg-white">
+
+      <div
+        class="grid grid-cols-5 gap-4 box-content h-auto w-25 p-4 border-4 bg-white"
+      >
         <!-- 5 day weather -->
-        <div class="day1 border-4 border-grey-700">01</div>
-        <div class="day2 border-4 border-grey-700">02</div>
-        <div class="day3 border-4 border-grey-700">03</div>
-        <div class="day4 border-4 border-grey-700">04</div>
-        <div class="day5 border-4 border-grey-700">05</div>
+        <div
+          id="day1"
+          class="day1 border-4 border-grey-700 text-xl font-semibold"
+        >
+          <h2 class="date">Forecast Date:</h2>
+          <h2>Current weather for <span class="cityName"></span></h2>
+          <p>Temperature: <span class="temperature"></span>°F</p>
+          <p>Weather: <span class="weatherDescription"></span></p>
+          <p>Humidity: <span class="humidity"></span>%</p>
+          <p><img class="weatherIcon" src="" alt="" /></p>
+        </div>
+        <div
+          id="day2"
+          class="day2 border-4 border-grey-700 text-xl font-semibold"
+        >
+          <h2 class="date">Forecast Date:</h2>
+          <h2>Current weather for <span class="cityName"></span></h2>
+          <p>Temperature: <span class="temperature"></span>°F</p>
+          <p>Weather: <span class="weatherDescription"></span></p>
+          <p>Humidity: <span class="humidity"></span>%</p>
+          <p><img class="weatherIcon" src="" alt="" /></p>
+        </div>
+        <div
+          id="day3"
+          class="day3 border-4 border-grey-700 text-xl font-semibold"
+        >
+          <h2 class="date">Forecast Date:</h2>
+          <h2>Current weather for <span class="cityName"></span></h2>
+          <p>Temperature: <span class="temperature"></span>°F</p>
+          <p>Weather: <span class="weatherDescription"></span></p>
+          <p>Humidity: <span class="humidity"></span>%</p>
+          <p><img class="weatherIcon" src="" alt="" /></p>
+        </div>
+        <div
+          id="day4"
+          class="day4 border-4 border-grey-700 text-xl font-semibold"
+        >
+          <h2 class="date">Forecast Date:</h2>
+          <h2>Current weather for <span class="cityName"></span></h2>
+          <p>Temperature: <span class="temperature"></span>°F</p>
+          <p>Weather: <span class="weatherDescription"></span></p>
+          <p>Humidity: <span class="humidity"></span>%</p>
+          <p><img class="weatherIcon" src="" alt="" /></p>
+        </div>
+        <div
+          id="day5"
+          class="day5 border-4 border-grey-700 text-xl font-semibold"
+        >
+          <h2 class="date">Forecast Date:</h2>
+          <h2>Current weather for <span class="cityName"></span></h2>
+          <p>Temperature: <span class="temperature"></span>°F</p>
+          <p>Weather: <span class="weatherDescription"></span></p>
+          <p>Humidity: <span class="humidity"></span>%</p>
+          <p><img class="weatherIcon" src="" alt="" /></p>
+        </div>
       </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
