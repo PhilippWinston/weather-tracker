@@ -51,7 +51,7 @@ $(function () {
     var country = "US";
     var weatherAPIKey = "48ac0fdf347a53092e08e9c42532b5e3";
     var queryURL =
-      "http://api.openweathermap.org/data/2.5/weather?q=" +
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
       city +
       "," +
       country +
@@ -112,7 +112,7 @@ $(function () {
     var country = "US";
 
     const forecastQueryURL =
-      "http://api.openweathermap.org/data/2.5/forecast?q=" +
+      "https://api.openweathermap.org/data/2.5/forecast?q=" +
       city +
       "," +
       country +
