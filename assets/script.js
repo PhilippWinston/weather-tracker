@@ -90,7 +90,7 @@ $(function () {
         $(".humidity").text(data.main.humidity);
         $(".weatherIcon").attr(
           "src",
-          "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png"
+          "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"
         );
 
         // update past searches list
@@ -151,7 +151,7 @@ $(function () {
           dayElement.find(".humidity").text(description);
           dayElement
             .find(".icon")
-            .attr("src", "http://openweathermap.org/img/w/" + icon + ".png");
+            .attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
 
           forecastdata.push({
             city: city,
